@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import webbrowser
 class Netfix_Activation:
  @classmethod
  def create_main_page(self):
@@ -14,13 +14,13 @@ class Netfix_Activation:
 if __name__=="__main__":
   na = Netfix_Activation()
   t = na.create_main_page()
-  mainc = tk.Canvas(t, width=800, height=600, bg='#0aa0b7')
+  mainc = tk.Canvas(t, width=800, height=600, bg='#001933')
   mainc.place(x=0, y=0)
-  mainc.create_rectangle(0, 0, 800, 36, fill='#074c57')
-  mainc.create_rectangle(0, 540, 800, 600, fill='#074c57')
-  topl = tk.Label(mainc, text="Netfix Antivirus Activation", bg='#074c57', fg='white', font=("Arial", 12))
+  mainc.create_rectangle(0, 0, 800, 36, fill='#330000')
+  mainc.create_rectangle(0, 540, 800, 600, fill='#330000')
+  topl = tk.Label(mainc, text="Netfix Antivirus Activation", bg='#330000', fg='white', font=("Arial", 12))
   topl.place(x=10, y=10)
-  closec= tk.Label(mainc, text="x", bg='#074c57', fg='white', font=("New Times Roman", 10))
+  closec= tk.Label(mainc, text="x", bg='#330000', fg='white', font=("New Times Roman", 10))
   closec.place(x=760, y=10)
   def c_e(e):
    closec.config(fg='yellow')
@@ -32,12 +32,15 @@ if __name__=="__main__":
   closec.bind('<Enter>', c_e)
   closec.bind('<Leave>', c_l)
   closec.bind('<Button-1>', c_c)
-  lab1 = tk.Label(mainc, text="Enter Activation Code :", fg='white', bg='#0aa0b7', font=("Arial", 16))
+  lab1 = tk.Label(mainc, text="Enter Activation Code :", fg='white', bg='#001933', font=("Arial", 16))
   lab1.place(x=50, y=100)
-  lab2 = tk.Label(mainc, text="Activation code foramt : XXXXX-XXXXX-XXXXX-XXXXX", fg='white', bg='#0aa0b7', font=("Arial", 8))
+  lab2 = tk.Label(mainc, text="Activation code foramt : XXXXX-XXXXX-XXXXX-XXXXX", fg='white', bg='#001933', font=("Arial", 8))
   lab2.place(x=50, y=160)
-  copyright = tk.Label(mainc, text="Copyright of Netfix @Pranav", fg='white', bg='#074c57', font=("Arial", 8))
+  copyright = tk.Label(mainc, text="Copyright of Netfix @Pranav", fg='white', bg='#330000', font=("Arial", 8))
   copyright.place(x=300, y=560)
+  def clk_(e):
+      webbrowser.open("https://www.instagram.com/elcodificadorrr_._")
+  copyright.bind('<Button-1>', clk_)
   var1 = tk.StringVar()
   var2 = tk.StringVar()
   var3 = tk.StringVar()
@@ -50,7 +53,7 @@ if __name__=="__main__":
   txt3.place(x=350, y=200)
   txt4 = tk.Entry(mainc, textvariable=var4)
   txt4.place(x=500, y=200)
-  auth = tk.Label(mainc, text="", fg='white', bg='#0aa0b7', font=("Arial", 8))
+  auth = tk.Label(mainc, text="", fg='white', bg='#001933', font=("Arial", 8))
   auth.place(x=50, y=340)
   def btn_c(e):
     str1 = var1.get()
@@ -67,15 +70,16 @@ if __name__=="__main__":
      auth.config(fg='white')
      auth.config(text="Wrong key entered.")
 
-  btnc = tk.Label(mainc, text="Activate", width=15, bg='#510202', fg='white', font=("Calibri", 12))
+  btnc = tk.Label(mainc, text="Activate", width=15, bg='#006666', fg='white', font=("Calibri", 12))
   btnc.place(x=50, y=260)
   def btn_e(e):
-   btnc.config(bg='#810f0f')
+   btnc.config(bg='#003333')
    btnc.config(fg='yellow')
   def btn_l(e):
-   btnc.config(bg='#510202')
+   btnc.config(bg='#006666')
    btnc.config(fg='white')
   btnc.bind('<Enter>', btn_e)
   btnc.bind('<Leave>', btn_l)
   btnc.bind('<Button-1>', btn_c)
+
   t.mainloop()
